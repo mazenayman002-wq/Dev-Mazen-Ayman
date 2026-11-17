@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mazen Ayman - Flutter Developer & Cross-Platform Software Engineer based in Cairo, Egypt. Specializing in Dart, GetX, SQLite, Clean Architecture, and high-performance mobile & desktop apps.">
+  <meta name="author" content="Mazen Ayman">
+  <meta name="theme-color" content="#042B59">
+  
+  <title>Mazen Ayman | Flutter Developer & Software Engineer</title>
+  
+  <!-- Modern Font: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Mazen Ayman Home">
+        <span class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14.28 2.05L3.45 12.88l3.66 3.66L21.6 2.05h-7.32z" fill="#027DFD"/>
+            <path d="M14.28 14.28L8.94 19.62l3.66 3.66 8.97-8.97h-7.29z" fill="#042B59"/>
+            <path d="M9.18 14.04l5.1 5.1-1.83 1.83-5.1-5.1 1.83-1.83z" fill="#54C5F8"/>
+          </svg>
+        </span>
+        <span class="logo-text">Mazen<span class="logo-accent">.dev</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-outline btn-sm header-cta">Get in Touch</a>
+        
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <!-- Hero Profile Image -->
+          <div class="hero-profile-avatar-wrapper" data-reveal>
+            <div class="hero-avatar-ring">
+              <img src="images/me.jpg" alt="Mazen Ayman - Flutter Developer" class="hero-avatar-img">
+            </div>
+          </div>
+
+          <h1 class="hero-title" data-reveal>
+            Building High-Performance <br class="hide-mobile">
+            <span class="text-highlight">Flutter &amp; Dart</span> Applications.
+          </h1>
+
+          <p class="hero-description" data-reveal>
+            Hi, I’m <strong>Mazen Ayman</strong> — a 23-year-old Cross-Platform Software Engineer based in Cairo, Egypt. 
+            Currently in my final senior year at <strong>HITU</strong> (Helwan International Technological University), 
+            I specialize in engineering offline-first architectures, reliable state management with <strong>GetX</strong>, 
+            and scalable mobile and desktop software.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group" data-reveal>
+            <a href="#projects" class="btn btn-primary">
+              <span>View Featured Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get in Touch</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Quick Metadata Strip -->
+          <div class="hero-meta-grid" data-reveal>
+            <div class="meta-item">
+              <span class="meta-label">Specialization</span>
+              <span class="meta-value">Flutter &amp; Dart (Mobile &amp; Desktop)</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">Cairo, Egypt</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Age &amp; Degree</span>
+              <span class="meta-value">23 y/o • Senior at HITU</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Clean Architecture / Code Snippet Preview -->
+        <div class="hero-visual" data-reveal>
+          <div class="code-preview-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="window-filename">mazen_ayman.dart</span>
+              <span class="window-tag">Flutter 3.x</span>
+            </div>
+            <div class="window-body">
+              <pre><code><span class="token-keyword">class</span> <span class="token-class">MazenAyman</span> <span class="token-keyword">extends</span> <span class="token-class">FlutterDeveloper</span> {
+  <span class="token-keyword">final</span> <span class="token-type">String</span> location = <span class="token-string">"Cairo, Egypt"</span>;
+  <span class="token-keyword">final</span> <span class="token-type">String</span> education = <span class="token-string">"HITU (Senior Year)"</span>;
+  <span class="token-keyword">final</span> <span class="token-type">int</span> age = <span class="token-number">23</span>;
+
+  <span class="token-keyword">final</span> <span class="token-type">List</span>&lt;<span class="token-type">String</span>&gt; coreStack = [
+    <span class="token-string">"Flutter"</span>, <span class="token-string">"Dart"</span>, <span class="token-string">"GetX"</span>,
+    <span class="token-string">"SQLite"</span>, <span class="token-string">"Clean Architecture"</span>
+  ];
+
+  <span class="token-annotation">@override</span>
+  <span class="token-type">Widget</span> <span class="token-function">build</span>(<span class="token-type">BuildContext</span> context) {
+    <span class="token-keyword">return</span> <span class="token-class">ScalableApplication</span>(
+      architecture: <span class="token-class">CleanArchitecture</span>.offlineFirst,
+      platforms: [
+        <span class="token-class">TargetPlatform</span>.android,
+        <span class="token-class">TargetPlatform</span>.iOS,
+        <span class="token-class">TargetPlatform</span>.windowsDesktop
+      ],
+      stateManagement: <span class="token-class">GetXController</span>(),
+      readyForHire: <span class="token-boolean">true</span>,
+    );
+  }
+}</code></pre>
+            </div>
+            <div class="window-footer">
+              <div class="pulse-status">
+                <span class="mini-indicator"></span>
+                <span>Production-Ready Code Quality</span>
+              </div>
+              <span class="code-metric">0 Errors • 0 Warnings</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT & TECHNICAL SKILLS SECTION ==================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        
+        <div class="section-header" data-reveal>
+          <span class="section-tag">Profile &amp; Engineering Skills</span>
+          <h2 class="section-title">Built with Architectural Discipline</h2>
+          <p class="section-subtitle">
+            Combining academic rigor with hands-on software development to deliver robust, cross-platform experiences.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Left Column: Biography & Background -->
+          <div class="about-bio-card" data-reveal>
+            <div class="bio-header">
+              <div class="bio-avatar">
+                <span class="avatar-initials">MA</span>
+              </div>
+              <div>
+                <h3 class="bio-name">Mazen Ayman</h3>
+                <p class="bio-title">Flutter Developer • HITU Senior Undergraduate</p>
+              </div>
+            </div>
+
+            <div class="bio-body">
+              <p>
+                I am a 23-year-old software developer currently completing my final senior year at 
+                <strong>Helwan International Technological University (HITU)</strong> in Cairo, Egypt. 
+                My focus centers on architecting cross-platform mobile and desktop systems using Flutter and Dart.
+              </p>
+              <p>
+                Rather than settling for superficial UI prototypes, I place strong emphasis on 
+                <strong>Clean Architecture</strong>, maintainable codebases, and offline-first database synchronization 
+                with SQLite. From complex enterprise ERPs on Windows desktop to responsive consumer transit and survey apps on iOS/Android, 
+                I write structured, clean, and testable code.
+              </p>
+            </div>
+
+            <!-- Key Principles -->
+            <div class="engineering-pillars">
+              <h4 class="pillars-title">Core Engineering Principles</h4>
+              <ul class="pillars-list">
+                <li class="pillar-item">
+                  <div class="pillar-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#027DFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                      <polyline points="2 17 12 22 22 17"/>
+                      <polyline points="2 12 12 17 22 12"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Layered Clean Architecture:</strong> Clear segregation of Data, Domain, and Presentation layers.
+                  </div>
+                </li>
+                <li class="pillar-item">
+                  <div class="pillar-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#027DFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Offline-First Reliability:</strong> Resilient local storage with ACID-compliant SQLite transactions.
+                  </div>
+                </li>
+                <li class="pillar-item">
+                  <div class="pillar-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#027DFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 20h9"/>
+                      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Clean, Modular Code:</strong> Strict adherence to SOLID, OOP design patterns, and descriptive naming.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column: Structured Skills Grid -->
+          <div class="skills-column" id="skills" data-reveal>
+            
+            <!-- Skill Category 1 -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <span class="category-badge">01</span>
+                <h4 class="category-title">Mobile &amp; Desktop Engineering</h4>
+              </div>
+              <p class="category-desc">Crafting responsive, native-performance UIs across mobile platforms and desktop operating systems.</p>
+              <div class="skill-tags">
+                <span class="skill-tag highlighted">Flutter</span>
+                <span class="skill-tag highlighted">Dart</span>
+                <span class="skill-tag">Android</span>
+                <span class="skill-tag">iOS</span>
+                <span class="skill-tag">Windows Desktop</span>
+                <span class="skill-tag">Responsive Layouts</span>
+                <span class="skill-tag">Custom Widgets</span>
+                <span class="skill-tag">Micro-Animations</span>
+              </div>
+            </div>
+
+            <!-- Skill Category 2 -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <span class="category-badge">02</span>
+                <h4 class="category-title">State Management &amp; Architecture</h4>
+              </div>
+              <p class="category-desc">Predictable reactive data flows, dependency injection, and clean decoupling.</p>
+              <div class="skill-tags">
+                <span class="skill-tag highlighted">GetX</span>
+                <span class="skill-tag highlighted">Clean Architecture</span>
+                <span class="skill-tag">Repository Pattern</span>
+                <span class="skill-tag">Dependency Injection</span>
+                <span class="skill-tag">Reactive Programming</span>
+                <span class="skill-tag">MVC / MVVM</span>
+                <span class="skill-tag">Route Management</span>
+              </div>
+            </div>
+
+            <!-- Skill Category 3 -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <span class="category-badge">03</span>
+                <h4 class="category-title">Database &amp; Backend Integration</h4>
+              </div>
+              <p class="category-desc">Local relational data models, offline persistence, and seamless network communication.</p>
+              <div class="skill-tags">
+                <span class="skill-tag highlighted">SQLite</span>
+                <span class="skill-tag highlighted">REST APIs</span>
+                <span class="skill-tag">Offline-First Caching</span>
+                <span class="skill-tag">SQL Query Optimization</span>
+                <span class="skill-tag">JSON Serialization</span>
+                <span class="skill-tag">Dio &amp; HTTP Clients</span>
+                <span class="skill-tag">Local Storage (GetStorage)</span>
+              </div>
+            </div>
+
+            <!-- Skill Category 4 -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <span class="category-badge">04</span>
+                <h4 class="category-title">Engineering Principles &amp; Tools</h4>
+              </div>
+              <p class="category-desc">Solid computer science fundamentals and disciplined software lifecycle workflows.</p>
+              <div class="skill-tags">
+                <span class="skill-tag highlighted">Git &amp; GitHub</span>
+                <span class="skill-tag">OOP Principles</span>
+                <span class="skill-tag">Data Structures</span>
+                <span class="skill-tag">Algorithms</span>
+                <span class="skill-tag">Clean Code Standards</span>
+                <span class="skill-tag">Flutter DevTools</span>
+                <span class="skill-tag">Location / GPS APIs</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED PROJECTS SECTION ==================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        
+        <div class="section-header" data-reveal>
+          <span class="section-tag">Portfolio Showcase</span>
+          <h2 class="section-title">Featured Production Applications</h2>
+          <p class="section-subtitle">
+            Explore three flagship applications demonstrating full-stack Flutter craftsmanship, offline-first architectures, and production-grade UI design.
+          </p>
+        </div>
+
+        <div class="projects-wrapper">
+
+          <!-- ==================== PROJECT 1: ERP SYSTEM ==================== -->
+          <article class="project-card" id="project-erp" data-reveal>
+            <div class="project-grid">
+              
+              <!-- Gallery / Interactive Viewer (Left Column) -->
+              <div class="project-media-col">
+                <div class="gallery-container" data-gallery="erp">
+                  
+                  <div class="gallery-stage desktop-stage">
+                    <img 
+                      src="images/erp/1.jpeg" 
+                      alt="Accounting &amp; Inventory ERP System - Screenshot 1" 
+                      class="gallery-main-img" 
+                      id="erp-main-img"
+                      loading="lazy"
+                      data-index="0"
+                    >
+                    <button class="gallery-nav-btn prev" aria-label="Previous screenshot" data-action="prev">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button class="gallery-nav-btn next" aria-label="Next screenshot" data-action="next">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                    <div class="gallery-badge-overlay">
+                      <span class="stage-counter" id="erp-counter">1 / 11</span>
+                      <button class="expand-btn" aria-label="Open Fullscreen Lightbox" data-action="fullscreen" title="Open Fullscreen Lightbox">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        <span>Expand View</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Thumbnails Track (1 to 11 in strict numerical order) -->
+                  <div class="gallery-thumbnails-wrapper">
+                    <div class="gallery-thumbnails" id="erp-thumbnails" role="tablist" aria-label="ERP System Screenshots">
+                      <button class="thumb-btn active" data-index="0" role="tab" aria-selected="true" aria-label="View screenshot 1">
+                        <img src="images/erp/1.jpeg" alt="ERP 1" loading="lazy">
+                        <span class="thumb-number">1</span>
+                      </button>
+                      <button class="thumb-btn" data-index="1" role="tab" aria-selected="false" aria-label="View screenshot 2">
+                        <img src="images/erp/2.jpeg" alt="ERP 2" loading="lazy">
+                        <span class="thumb-number">2</span>
+                      </button>
+                      <button class="thumb-btn" data-index="2" role="tab" aria-selected="false" aria-label="View screenshot 3">
+                        <img src="images/erp/3.jpeg" alt="ERP 3" loading="lazy">
+                        <span class="thumb-number">3</span>
+                      </button>
+                      <button class="thumb-btn" data-index="3" role="tab" aria-selected="false" aria-label="View screenshot 4">
+                        <img src="images/erp/4.jpeg" alt="ERP 4" loading="lazy">
+                        <span class="thumb-number">4</span>
+                      </button>
+                      <button class="thumb-btn" data-index="4" role="tab" aria-selected="false" aria-label="View screenshot 5">
+                        <img src="images/erp/5.jpeg" alt="ERP 5" loading="lazy">
+                        <span class="thumb-number">5</span>
+                      </button>
+                      <button class="thumb-btn" data-index="5" role="tab" aria-selected="false" aria-label="View screenshot 6">
+                        <img src="images/erp/6.jpeg" alt="ERP 6" loading="lazy">
+                        <span class="thumb-number">6</span>
+                      </button>
+                      <button class="thumb-btn" data-index="6" role="tab" aria-selected="false" aria-label="View screenshot 7">
+                        <img src="images/erp/7.jpeg" alt="ERP 7" loading="lazy">
+                        <span class="thumb-number">7</span>
+                      </button>
+                      <button class="thumb-btn" data-index="7" role="tab" aria-selected="false" aria-label="View screenshot 8">
+                        <img src="images/erp/8.jpeg" alt="ERP 8" loading="lazy">
+                        <span class="thumb-number">8</span>
+                      </button>
+                      <button class="thumb-btn" data-index="8" role="tab" aria-selected="false" aria-label="View screenshot 9">
+                        <img src="images/erp/9.jpeg" alt="ERP 9" loading="lazy">
+                        <span class="thumb-number">9</span>
+                      </button>
+                      <button class="thumb-btn" data-index="9" role="tab" aria-selected="false" aria-label="View screenshot 10">
+                        <img src="images/erp/10.jpeg" alt="ERP 10" loading="lazy">
+                        <span class="thumb-number">10</span>
+                      </button>
+                      <button class="thumb-btn" data-index="10" role="tab" aria-selected="false" aria-label="View screenshot 11">
+                        <img src="images/erp/11.jpeg" alt="ERP 11" loading="lazy">
+                        <span class="thumb-number">11</span>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Project Info (Right Column) -->
+              <div class="project-info-col">
+                <div class="project-meta-top">
+                  <span class="project-type-badge desktop">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Desktop &amp; Cross-Platform
+                  </span>
+                  <!-- <span class="project-status-pill">Offline-First Enterprise</span> -->
+                </div>
+
+                <h3 class="project-heading">Accounting &amp; Inventory ERP System</h3>
+                
+                <p class="project-summary">
+                  A comprehensive, offline-first Flutter and SQLite accounting and inventory management system 
+                  designed for retail and commercial operations. Built with strict Clean Architecture to ensure 
+                  zero business logic leaks between accounting rules and the presentation layer.
+                </p>
+
+                <!-- Architectural Highlights -->
+                <div class="project-feature-list">
+                  <div class="feature-bullet">
+                    <!-- <span class="bullet-dot"></span> -->
+                    <!-- <div>
+                      //<strong>Offline-First SQLite Engine:</strong> Robust local relational database supporting ACID transactions, complete ledger persistence, and offline data safety.
+                    </div> -->
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Customer Ledger &amp; Invoicing:</strong> Real-time debit/credit tracking, multi-account electronic payments, and transactional invoice voiding with automated balance corrections.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Stock &amp; Inventory Control:</strong> Multi-warehouse stock tracking, SKU management, low-inventory triggers, and sales audit histories.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Modular GetX State Management:</strong> Decoupled controllers, reactive UI updating, and high-efficiency memory disposal on large data tables.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tech Tags -->
+                <div class="project-tech-tags">
+                  <span class="tech-pill">Flutter</span>
+                  <span class="tech-pill">Dart</span>
+                  <span class="tech-pill">GetX</span>
+                  <span class="tech-pill">SQLite</span>
+                  <span class="tech-pill">Clean Architecture</span>
+                  <span class="tech-pill">Desktop UI</span>
+                </div>
+
+                <div class="project-card-footer">
+                  <button class="btn btn-outline btn-sm open-modal-btn" data-project="erp">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    <span>Inspect All 11 Screenshots</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ==================== PROJECT 2: CAIRO METRO ==================== -->
+          <article class="project-card" id="project-metro" data-reveal>
+            <div class="project-grid">
+              
+              <!-- Gallery / Interactive Viewer (Left Column) -->
+              <div class="project-media-col">
+                <div class="gallery-container single-image-container" data-gallery="metro">
+                  
+                  <div class="gallery-stage mobile-stage">
+                    <img 
+                      src="images/metro/metro.jpeg" 
+                      alt="Cairo Metro Navigation &amp; Ticketing Assistant - App UI" 
+                      class="gallery-main-img mobile-frame-img" 
+                      id="metro-main-img"
+                      loading="lazy"
+                      data-index="0"
+                    >
+                    <div class="gallery-badge-overlay">
+                      <span class="stage-counter">High-Res Mobile UI</span>
+                      <button class="expand-btn" aria-label="Open Fullscreen Lightbox" data-action="fullscreen" title="Open Fullscreen Lightbox">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        <span>Inspect Full View</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="single-image-caption">
+                    <span class="caption-icon">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span>Click image or "Inspect Full View" to open high-resolution transit layout</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Project Info (Right Column) -->
+              <div class="project-info-col">
+                <div class="project-meta-top">
+                  <span class="project-type-badge mobile">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    Mobile Application
+                  </span>
+                  <span class="project-status-pill">Transit &amp; Geolocation</span>
+                </div>
+
+                <h3 class="project-heading">Cairo Metro Navigation &amp; Ticketing Assistant</h3>
+                
+                <p class="project-summary">
+                  A user-friendly mobile transit companion engineered for the Greater Cairo Metro network. 
+                  It provides commuters with shortest-path transit calculations, station transfer guidance across 
+                  Lines 1, 2, and 3, intelligent ticket pricing algorithms, and real-time station detection via GPS.
+                </p>
+
+                <!-- Architectural Highlights -->
+                <div class="project-feature-list">
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Optimal Route &amp; Interchange Algorithm:</strong> Computes the fastest path between any two stations, highlighting interchange nodes (Sadat, Al-Shohadaa, Attaba, Kit Kat) and estimated travel durations.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>GPS Nearest Station Locator:</strong> Utilizes device geolocation APIs to compute Euclidean and road proximity, directing users to the nearest operational metro entrance.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Dynamic Fare Calculation:</strong> Automates ticket tier selection based on stop counts, passenger age brackets, and accessibility/disability fare concessions.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Accessibility-First UI/UX:</strong> High-contrast typography and clear visual signposting tailored for quick scanning during active commutes.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tech Tags -->
+                <div class="project-tech-tags">
+                  <span class="tech-pill">Flutter</span>
+                  <span class="tech-pill">Dart</span>
+                  <span class="tech-pill">Location Services</span>
+                  <span class="tech-pill">UI/UX</span>
+                  <span class="tech-pill">Graph Algorithms</span>
+                  <span class="tech-pill">State Management</span>
+                </div>
+
+                <div class="project-card-footer">
+                  <button class="btn btn-outline btn-sm open-modal-btn" data-project="metro">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    <span>Inspect Metro Screenshot</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+          <!-- ==================== PROJECT 3: GOURMET SURVEY ==================== -->
+          <article class="project-card" id="project-gourmet" data-reveal>
+            <div class="project-grid">
+              
+              <!-- Gallery / Interactive Viewer (Left Column) -->
+              <div class="project-media-col">
+                <div class="gallery-container" data-gallery="gourmet">
+                  
+                  <div class="gallery-stage mobile-stage">
+                    <img 
+                      src="images/gourmet/1.jpeg" 
+                      alt="Gourmet Survey &amp; Feedback App - Screenshot 1" 
+                      class="gallery-main-img mobile-frame-img" 
+                      id="gourmet-main-img"
+                      loading="lazy"
+                      data-index="0"
+                    >
+                    <button class="gallery-nav-btn prev" aria-label="Previous screenshot" data-action="prev">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button class="gallery-nav-btn next" aria-label="Next screenshot" data-action="next">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                    <div class="gallery-badge-overlay">
+                      <span class="stage-counter" id="gourmet-counter">1 / 9</span>
+                      <button class="expand-btn" aria-label="Open Fullscreen Lightbox" data-action="fullscreen" title="Open Fullscreen Lightbox">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        <span>Expand View</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Thumbnails Track (1 to 9 in strict numerical order) -->
+                  <div class="gallery-thumbnails-wrapper">
+                    <div class="gallery-thumbnails" id="gourmet-thumbnails" role="tablist" aria-label="Gourmet Survey Screenshots">
+                      <button class="thumb-btn active" data-index="0" role="tab" aria-selected="true" aria-label="View screenshot 1">
+                        <img src="images/gourmet/1.jpeg" alt="Gourmet 1" loading="lazy">
+                        <span class="thumb-number">1</span>
+                      </button>
+                      <button class="thumb-btn" data-index="1" role="tab" aria-selected="false" aria-label="View screenshot 2">
+                        <img src="images/gourmet/2.jpeg" alt="Gourmet 2" loading="lazy">
+                        <span class="thumb-number">2</span>
+                      </button>
+                      <button class="thumb-btn" data-index="2" role="tab" aria-selected="false" aria-label="View screenshot 3">
+                        <img src="images/gourmet/3.jpeg" alt="Gourmet 3" loading="lazy">
+                        <span class="thumb-number">3</span>
+                      </button>
+                      <button class="thumb-btn" data-index="3" role="tab" aria-selected="false" aria-label="View screenshot 4">
+                        <img src="images/gourmet/4.jpeg" alt="Gourmet 4" loading="lazy">
+                        <span class="thumb-number">4</span>
+                      </button>
+                      <button class="thumb-btn" data-index="4" role="tab" aria-selected="false" aria-label="View screenshot 5">
+                        <img src="images/gourmet/5.jpeg" alt="Gourmet 5" loading="lazy">
+                        <span class="thumb-number">5</span>
+                      </button>
+                      <button class="thumb-btn" data-index="5" role="tab" aria-selected="false" aria-label="View screenshot 6">
+                        <img src="images/gourmet/6.jpeg" alt="Gourmet 6" loading="lazy">
+                        <span class="thumb-number">6</span>
+                      </button>
+                      <button class="thumb-btn" data-index="6" role="tab" aria-selected="false" aria-label="View screenshot 7">
+                        <img src="images/gourmet/7.jpeg" alt="Gourmet 7" loading="lazy">
+                        <span class="thumb-number">7</span>
+                      </button>
+                      <button class="thumb-btn" data-index="7" role="tab" aria-selected="false" aria-label="View screenshot 8">
+                        <img src="images/gourmet/8.jpeg" alt="Gourmet 8" loading="lazy">
+                        <span class="thumb-number">8</span>
+                      </button>
+                      <button class="thumb-btn" data-index="8" role="tab" aria-selected="false" aria-label="View screenshot 9">
+                        <img src="images/gourmet/9.jpeg" alt="Gourmet 9" loading="lazy">
+                        <span class="thumb-number">9</span>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Project Info (Right Column) -->
+              <div class="project-info-col">
+                <div class="project-meta-top">
+                  <span class="project-type-badge mobile">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    Mobile Application
+                  </span>
+                  <span class="project-status-pill">Hospitality &amp; CX</span>
+                </div>
+
+                <h3 class="project-heading">Gourmet Survey &amp; Feedback App</h3>
+                
+                <p class="project-summary">
+                  A structured mobile survey and customer experience application designed for the food and hospitality 
+                  industry. Enables dining establishments to gather granular customer sentiment, dynamic ratings, 
+                  and multi-branch feedback with an offline-resilient submission queue.
+                </p>
+
+                <!-- Architectural Highlights -->
+                <div class="project-feature-list">
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Dynamic Questionnaire Engine:</strong> Renders multiple survey question formats (Likert scales, star ratings, multi-choice tags, text feedback) based on runtime configurations.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Reactive GetX State Management:</strong> Instant reactive responses, progressive form validation, and smooth multi-step questionnaire transitions.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Offline Persistence &amp; Sync:</strong> Queues submitted reviews in local storage when network conditions drop, automatically synchronizing once connectivity resumes.
+                    </div>
+                  </div>
+                  <div class="feature-bullet">
+                    <span class="bullet-dot"></span>
+                    <div>
+                      <strong>Modern Hospitality UI:</strong> Sleek presentation designed to maximize survey completion rates while preventing user fatigue.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tech Tags -->
+                <div class="project-tech-tags">
+                  <span class="tech-pill">Flutter</span>
+                  <span class="tech-pill">Dart</span>
+                  <span class="tech-pill">GetX</span>
+                  <span class="tech-pill">Local Storage</span>
+                  <span class="tech-pill">Dynamic Forms</span>
+                  <span class="tech-pill">Mobile UI</span>
+                </div>
+
+                <div class="project-card-footer">
+                  <button class="btn btn-outline btn-sm open-modal-btn" data-project="gourmet">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    <span>Inspect All 9 Screenshots</span>
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        
+        <div class="section-header" data-reveal>
+          <span class="section-tag">Direct Communication</span>
+          <h2 class="section-title">Let’s Build Something Exceptional</h2>
+          <p class="section-subtitle">
+            Whether you are looking to hire a full-time Flutter engineer, collaborate on a mobile/desktop project, or discuss architectural solutions.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Channels Card -->
+          <div class="contact-info-card" data-reveal>
+            <h3 class="contact-card-title">Contact Information</h3>
+            <p class="contact-card-desc">
+              Reach out directly through any of the channels below. Fast response guaranteed.
+            </p>
+
+            <div class="channel-list">
+              
+              <!-- Phone / WhatsApp -->
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027DFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">Phone &amp; WhatsApp</span>
+                  <div class="channel-actions-row">
+                    <a href="tel:+201022731089" class="channel-value">01022731089</a>
+                    <button class="copy-pill-btn" data-copy="01022731089" aria-label="Copy phone number">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027DFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">Email Address</span>
+                  <div class="channel-actions-row">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mazenayman002@gmail.com" target="_blank" rel="noopener noreferrer" class="channel-value">mazenayman002@gmail.com</a>
+                    <button class="copy-pill-btn" data-copy="mazenayman002@gmail.com" aria-label="Copy email address">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027DFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">Current Location</span>
+                  <span class="channel-value static">Cairo, Egypt</span>
+                </div>
+              </div>
+
+              <!-- Education -->
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#027DFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                  </svg>
+                </div>
+                <div class="channel-details">
+                  <span class="channel-label">University Education</span>
+                  <span class="channel-value static">HITU (Helwan International Technological University)</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Instant Action Buttons -->
+            <div class="quick-action-btns">
+              <a href="https://wa.me/201022731089?text=Hello%20Mazen,%20I%20reviewed%20your%20Flutter%20portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.3-1.95 1.35-.51.05-1.18.07-1.91-.16-.44-.14-1.01-.33-1.74-.65-3.07-1.33-5.07-4.42-5.22-4.63-.16-.2-1.25-1.67-1.25-3.18 0-1.52.79-2.27 1.07-2.58.28-.31.62-.39.83-.39.21 0 .41.01.6.01.19 0 .45-.07.7.54.26.63.89 2.16.97 2.32.08.16.13.35.03.55-.1.2-.16.33-.31.51-.16.18-.33.4-.47.54-.16.16-.33.33-.14.65.19.33.85 1.4 1.83 2.27 1.26 1.12 2.32 1.47 2.65 1.63.33.16.52.14.71-.08.2-.23.83-.97 1.05-1.3.23-.33.45-.28.76-.16.31.12 1.98.93 2.32 1.1.34.17.57.26.65.4.08.14.08.83-.16 1.51z"/>
+                </svg>
+                <span>Chat on WhatsApp</span>
+              </a>
+
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mazenayman002@gmail.com&su=Flutter%20Development%20Inquiry" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="email-compose-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                <span>Send Direct Email</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-left">
+        <div class="footer-logo">
+          <span class="logo-symbol mini">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M14.28 2.05L3.45 12.88l3.66 3.66L21.6 2.05h-7.32z" fill="#027DFD"/>
+              <path d="M14.28 14.28L8.94 19.62l3.66 3.66 8.97-8.97h-7.29z" fill="#042B59"/>
+            </svg>
+          </span>
+          <span class="logo-text">Mazen Ayman</span>
+        </div>
+        <p class="footer-copy">
+          &copy; 2026 Mazen Ayman.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <ul class="footer-nav">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="back-to-top-btn" id="back-to-top" aria-label="Back to top">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+          <span>Top</span>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== GLOBAL INTERACTIVE LIGHTBOX MODAL ==================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Screenshot Lightbox Viewer">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    
+    <div class="lightbox-content">
+      
+      <!-- Lightbox Header -->
+      <div class="lightbox-header">
+        <div class="lightbox-title-wrap">
+          <h4 class="lightbox-title" id="lightbox-project-title">Project Title</h4>
+          <span class="lightbox-counter" id="lightbox-counter">1 of 11</span>
+        </div>
+        <div class="lightbox-actions">
+          <button class="lightbox-btn close" id="lightbox-close" aria-label="Close Lightbox (Esc)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lightbox Main Stage -->
+      <div class="lightbox-stage" id="lightbox-stage">
+        <button class="lightbox-nav-btn prev" id="lightbox-prev" aria-label="Previous screenshot (Left Arrow)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+
+        <div class="lightbox-img-wrapper" id="lightbox-img-wrapper">
+          <img src="" alt="Fullscreen Screenshot Preview" id="lightbox-img" class="lightbox-img">
+        </div>
+
+        <button class="lightbox-nav-btn next" id="lightbox-next" aria-label="Next screenshot (Right Arrow)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Lightbox Bottom Thumbnail Tray -->
+      <div class="lightbox-tray" id="lightbox-tray">
+        <!-- Dynamically populated thumbnail track -->
+      </div>
+
+      <!-- Mobile Hint & Keyboard Shortcuts -->
+      <div class="lightbox-footer">
+        <span class="lightbox-hint">Keyboard: <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to navigate &bull; <kbd>Esc</kbd> to close &bull; Swipe on touch devices</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container for Copy & Form Feedback -->
+  <div class="toast-container" id="toast-container" aria-live="assertive"></div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

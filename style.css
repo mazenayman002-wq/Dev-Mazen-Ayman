@@ -1,0 +1,1987 @@
+/* ==========================================================================
+   MAZEN AYMAN - FLUTTER DEVELOPER PORTFOLIO
+   Design System: Swiss-Grid Inspired, Flutter Brand Palette, Anti-AI-Slop
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Palette (Flutter Inspired) */
+  --flutter-blue: #027DFD;
+  --flutter-blue-hover: #0168D4;
+  --flutter-navy: #042B59;
+  --flutter-navy-light: #0B3F7B;
+  --flutter-cyan: #54C5F8;
+  --flutter-soft-blue: #E1F0FF;
+  --flutter-soft-blue-alt: #EDF6FF;
+
+  /* Neutral Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  --bg-code-header: #1E293B;
+  --bg-code-body: #0F172A;
+
+  /* Typography Colors */
+  --text-primary: #0F172A;       /* Deep Slate for Headings */
+  --text-secondary: #475569;     /* Muted Slate for Body */
+  --text-tertiary: #64748B;      /* Light Slate for Captions & Meta */
+  --text-white: #FFFFFF;
+
+  /* Structural Borders */
+  --border-subtle: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-accent: #BAE6FD;
+  --border-brand: #027DFD;
+
+  /* Elevations & Shadows (Subtle, Crisp, Non-diffuse) */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-hover: 0 10px 20px -3px rgba(4, 43, 89, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+  --shadow-lightbox: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+
+  /* Typography Stacks */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Layout & Sizing */
+  --max-width: 1200px;
+  --header-height: 72px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Micro-Interaction Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. GLOBAL RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input, textarea, button {
+  font: inherit;
+}
+
+/* Accessible Screen Reader Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT & CONTAINER
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+/* Section Header Typography */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--flutter-blue);
+  background-color: var(--flutter-soft-blue);
+  border: 1px solid var(--border-accent);
+  padding: 0.25rem 0.875rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.875rem;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--flutter-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & UI CONTROLS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8125rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.125rem;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: var(--flutter-blue);
+  color: var(--text-white);
+  border: 1px solid var(--flutter-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--flutter-blue-hover);
+  border-color: var(--flutter-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 125, 253, 0.25);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--flutter-navy);
+  border: 1px solid var(--border-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--flutter-navy);
+  color: var(--flutter-navy);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--flutter-blue);
+  border: 1px solid var(--border-accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--flutter-soft-blue);
+  border-color: var(--flutter-blue);
+  color: var(--flutter-blue-hover);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: var(--text-white);
+  border: 1px solid #20BA5A;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 100;
+  transition: box-shadow var(--transition-fast);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-weight: 800;
+  font-size: 1.1875rem;
+  letter-spacing: -0.02em;
+  color: var(--flutter-navy);
+}
+
+.logo-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: var(--flutter-soft-blue);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+}
+
+.logo-symbol.mini {
+  width: 28px;
+  height: 28px;
+}
+
+.logo-accent {
+  color: var(--flutter-blue);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.375rem 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--flutter-navy);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--flutter-blue);
+  border-radius: 2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--flutter-navy);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* Hero Profile Avatar */
+.hero-profile-avatar-wrapper {
+  margin-bottom: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-avatar-ring {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  padding: 3.5px;
+  background: linear-gradient(135deg, var(--flutter-blue) 0%, #00B4D8 50%, #0D47A1 100%);
+  box-shadow: 0 12px 28px -6px rgba(2, 125, 253, 0.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.hero-avatar-ring:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 36px -6px rgba(2, 125, 253, 0.45);
+}
+
+.hero-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 3px solid #FFFFFF;
+  display: block;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 0.3125rem 0.875rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.status-text {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #065F46;
+}
+
+.hero-title {
+  font-size: clamp(2.35rem, 4.5vw, 3.65rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  color: var(--flutter-navy);
+  margin-bottom: 1.25rem;
+}
+
+.text-highlight {
+  color: var(--flutter-blue);
+  display: inline-block;
+  position: relative;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--flutter-navy);
+}
+
+/* Hero Visual: Authentic Code Window */
+.code-preview-window {
+  background-color: var(--bg-code-body);
+  border-radius: var(--radius-lg);
+  border: 1px solid #334155;
+  box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.window-header {
+  background-color: var(--bg-code-header);
+  padding: 0.75rem 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red { background-color: #EF4444; }
+.dot-yellow { background-color: #F59E0B; }
+.dot-green { background-color: #10B981; }
+
+.window-filename {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #94A3B8;
+}
+
+.window-tag {
+  font-size: 0.6875rem;
+  color: #38BDF8;
+  background-color: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.window-body {
+  padding: 1.25rem 1.25rem;
+  overflow-x: auto;
+}
+
+.window-body pre {
+  margin: 0;
+}
+
+.window-body code {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: #E2E8F0;
+}
+
+/* Syntax Highlighting */
+.token-keyword { color: #F472B6; font-weight: 600; }
+.token-class { color: #38BDF8; font-weight: 600; }
+.token-type { color: #4ADE80; }
+.token-string { color: #FDE047; }
+.token-number { color: #FB923C; }
+.token-boolean { color: #C084FC; }
+.token-annotation { color: #94A3B8; font-style: italic; }
+.token-function { color: #60A5FA; }
+
+.window-footer {
+  background-color: var(--bg-code-header);
+  border-top: 1px solid #334155;
+  padding: 0.5rem 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #94A3B8;
+}
+
+.pulse-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mini-indicator {
+  width: 6px;
+  height: 6px;
+  background-color: #10B981;
+  border-radius: 50%;
+}
+
+.code-metric {
+  color: #64748B;
+}
+
+/* --------------------------------------------------------------------------
+   7. ABOUT & TECHNICAL SKILLS SECTION
+   -------------------------------------------------------------------------- */
+.about-section {
+  background-color: var(--bg-primary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Left: Bio Card */
+.about-bio-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+}
+
+.bio-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bio-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: var(--flutter-navy);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  border: 2px solid var(--flutter-soft-blue);
+  box-shadow: 0 4px 10px rgba(4, 43, 89, 0.15);
+}
+
+.bio-name {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--flutter-navy);
+  margin-bottom: 0.25rem;
+}
+
+.bio-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--flutter-blue);
+}
+
+.bio-body {
+  margin-bottom: 2rem;
+}
+
+.bio-body p {
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+  margin-bottom: 1rem;
+}
+
+.bio-body p:last-child {
+  margin-bottom: 0;
+}
+
+.bio-body strong {
+  color: var(--text-primary);
+}
+
+/* Engineering Pillars */
+.pillars-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--flutter-navy);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  font-size: 0.9125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.pillar-icon {
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: var(--flutter-soft-blue);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-item strong {
+  color: var(--text-primary);
+}
+
+/* Right: Skills Cards */
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill-category-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.375rem 1.5rem;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.skill-category-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--flutter-blue);
+  background-color: var(--flutter-soft-blue);
+  border: 1px solid var(--border-accent);
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.category-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--flutter-navy);
+}
+
+.category-desc {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0.875rem;
+  line-height: 1.45;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.skill-tag.highlighted {
+  color: var(--flutter-navy);
+  background-color: var(--flutter-soft-blue-alt);
+  border-color: var(--border-accent);
+  font-weight: 600;
+}
+
+.skill-tag:hover {
+  border-color: var(--flutter-blue);
+  color: var(--flutter-blue);
+}
+
+/* --------------------------------------------------------------------------
+   8. FEATURED PROJECTS SECTION
+   -------------------------------------------------------------------------- */
+.projects-section {
+  background-color: var(--bg-secondary);
+}
+
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.project-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: stretch;
+}
+
+/* Gallery / Media Column */
+.project-media-col {
+  background-color: #0F172A;
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gallery-stage {
+  position: relative;
+  background-color: #0B1120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Desktop Aspect Ratio (~16:9 - 1.94:1) */
+.gallery-stage.desktop-stage {
+  min-height: 380px;
+  height: 400px;
+}
+
+/* Mobile Aspect Ratio (~9:19.5 - 0.45:1) */
+.gallery-stage.mobile-stage {
+  min-height: 440px;
+  height: 460px;
+  padding: 1.5rem;
+  background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%);
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  cursor: pointer;
+  background-color: #0B1120;
+}
+
+.gallery-main-img.mobile-frame-img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-main-img:hover {
+  transform: scale(1.015);
+}
+
+/* Floating Navigation Arrows on Stage */
+.gallery-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.gallery-nav-btn:hover {
+  background-color: var(--flutter-blue);
+  border-color: var(--flutter-blue);
+  color: var(--text-white);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.gallery-nav-btn.prev { left: 1rem; }
+.gallery-nav-btn.next { right: 1rem; }
+
+/* Stage Overlay Badge */
+.gallery-badge-overlay {
+  position: absolute;
+  bottom: 0.875rem;
+  left: 0.875rem;
+  right: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.stage-counter {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 0.3125rem 0.625rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.expand-btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.3125rem 0.625rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.expand-btn:hover {
+  background-color: var(--flutter-blue);
+  border-color: var(--flutter-blue);
+}
+
+/* Single Image Caption */
+.single-image-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #1E293B;
+  color: #94A3B8;
+  font-size: 0.78125rem;
+  font-family: var(--font-mono);
+  border-top: 1px solid #334155;
+}
+
+.single-image-caption .caption-icon {
+  color: var(--flutter-cyan);
+}
+
+/* Thumbnails Strip */
+.gallery-thumbnails-wrapper {
+  background-color: #0F172A;
+  border-top: 1px solid #334155;
+  padding: 0.625rem 0.75rem;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #0F172A;
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+  height: 4px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+.thumb-btn {
+  position: relative;
+  flex: 0 0 54px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid #334155;
+  transition: all var(--transition-fast);
+  background-color: #1E293B;
+}
+
+.thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.thumb-number {
+  position: absolute;
+  bottom: 1px;
+  right: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--text-white);
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0 3px;
+  border-radius: 2px;
+  line-height: 1.2;
+}
+
+.thumb-btn:hover {
+  border-color: #94A3B8;
+}
+
+.thumb-btn:hover img {
+  opacity: 0.9;
+}
+
+.thumb-btn.active {
+  border-color: var(--flutter-blue);
+  box-shadow: 0 0 0 1px var(--flutter-blue);
+}
+
+.thumb-btn.active img {
+  opacity: 1;
+}
+
+/* Project Info (Right Column) */
+.project-info-col {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.project-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-sm);
+}
+
+.project-type-badge.desktop {
+  background-color: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+}
+
+.project-type-badge.mobile {
+  background-color: #F0FDF4;
+  color: #15803D;
+  border: 1px solid #BBF7D0;
+}
+
+.project-status-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.project-heading {
+  font-size: 1.625rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--flutter-navy);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.project-summary {
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.project-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.feature-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--flutter-blue);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.feature-bullet strong {
+  color: var(--text-primary);
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--flutter-navy);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-sm);
+}
+
+.project-card-footer {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   9. CONTACT SECTION
+   -------------------------------------------------------------------------- */
+.contact-section {
+  background-color: var(--bg-primary);
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-info-card {
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.contact-card-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--flutter-navy);
+  margin-bottom: 0.5rem;
+}
+
+.contact-card-desc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.55;
+}
+
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.channel-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.125rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.channel-item:hover {
+  border-color: var(--border-accent);
+}
+
+.channel-icon {
+  width: 38px;
+  height: 38px;
+  background-color: var(--flutter-soft-blue);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.channel-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.channel-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.channel-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--flutter-navy);
+}
+
+.channel-value:hover:not(.static) {
+  color: var(--flutter-blue);
+}
+
+.channel-value.static {
+  cursor: default;
+}
+
+/* Copy Button Pill */
+.copy-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--flutter-blue);
+  background-color: var(--flutter-soft-blue);
+  border: 1px solid var(--border-accent);
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.copy-pill-btn:hover {
+  background-color: var(--flutter-blue);
+  color: var(--text-white);
+}
+
+.quick-action-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-label .required {
+  color: #EF4444;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--flutter-blue);
+  box-shadow: 0 0 0 3px rgba(2, 125, 253, 0.12);
+}
+
+.form-input.invalid,
+.form-textarea.invalid {
+  border-color: #EF4444;
+}
+
+.field-error {
+  display: none;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: #EF4444;
+  margin-top: 0.25rem;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+.form-status {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.form-status.success {
+  display: block;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+}
+
+.form-status.error {
+  display: block;
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #991B1B;
+}
+
+/* --------------------------------------------------------------------------
+   10. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--flutter-navy);
+  color: #94A3B8;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-top: 1px solid #1E3A8A;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--text-white);
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: #94A3B8;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-nav a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #CBD5E1;
+}
+
+.footer-nav a:hover {
+  color: var(--flutter-cyan);
+}
+
+.back-to-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background-color: #0B3F7B;
+  color: var(--text-white);
+  border: 1px solid #1E5094;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--flutter-blue);
+  border-color: var(--flutter-blue);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   11. LIGHTBOX MODAL (UNIVERSAL IMAGE VIEWER)
+   -------------------------------------------------------------------------- */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(4, 15, 30, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+  position: relative;
+  z-index: 10;
+  width: 95vw;
+  max-width: 1300px;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0B1120;
+  border: 1px solid #334155;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lightbox);
+  overflow: hidden;
+}
+
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  background-color: #0F172A;
+  border-bottom: 1px solid #1E293B;
+}
+
+.lightbox-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lightbox-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.lightbox-counter {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--flutter-cyan);
+  background-color: rgba(84, 197, 248, 0.12);
+  border: 1px solid rgba(84, 197, 248, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.lightbox-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lightbox-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: #1E293B;
+  color: #CBD5E1;
+  border: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-btn:hover {
+  background-color: #EF4444;
+  color: var(--text-white);
+  border-color: #EF4444;
+}
+
+/* Lightbox Stage */
+.lightbox-stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+  background-color: #070B14;
+}
+
+.lightbox-img-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.lightbox-img {
+  max-width: 95%;
+  max-height: 74vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: opacity var(--transition-fast);
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(6px);
+  color: var(--text-white);
+  border: 1px solid #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+  background-color: var(--flutter-blue);
+  border-color: var(--flutter-blue);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-nav-btn.prev { left: 1.25rem; }
+.lightbox-nav-btn.next { right: 1.25rem; }
+
+.lightbox-nav-btn.hidden {
+  display: none;
+}
+
+/* Lightbox Tray */
+.lightbox-tray {
+  background-color: #0F172A;
+  border-top: 1px solid #1E293B;
+  padding: 0.625rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.lightbox-thumb {
+  position: relative;
+  flex: 0 0 56px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid #334155;
+  background-color: #1E293B;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.lightbox-thumb.active {
+  border-color: var(--flutter-blue);
+  box-shadow: 0 0 0 2px var(--flutter-blue);
+}
+
+.lightbox-thumb.active img {
+  opacity: 1;
+}
+
+.lightbox-thumb-number {
+  position: absolute;
+  bottom: 1px;
+  right: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: var(--text-white);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+.lightbox-footer {
+  background-color: #0B1120;
+  border-top: 1px solid #1E293B;
+  padding: 0.4375rem 1.25rem;
+  text-align: center;
+}
+
+.lightbox-hint {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: #64748B;
+}
+
+.lightbox-hint kbd {
+  background-color: #1E293B;
+  border: 1px solid #334155;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   12. TOAST NOTIFICATIONS
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: var(--flutter-navy);
+  color: var(--text-white);
+  padding: 0.75rem 1.125rem;
+  border-radius: var(--radius-md);
+  border: 1px solid #1E3A8A;
+  box-shadow: var(--shadow-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: toastIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast.toast-out {
+  animation: toastOut 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.toast-icon {
+  color: #10B981;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. SCROLL REVEAL MICRO-INTERACTIONS
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   14. RESPONSIVE MEDIA QUERIES (MOBILE-FIRST PRINCIPLES)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .gallery-stage.desktop-stage {
+    height: 340px;
+    min-height: 320px;
+  }
+
+  .gallery-stage.mobile-stage {
+    height: 400px;
+    min-height: 380px;
+  }
+
+  .contact-grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-avatar-ring {
+    width: 100px;
+    height: 100px;
+  }
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Header Mobile Menu */
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    transform: translateY(-120%);
+    transition: transform var(--transition-normal);
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 1.0625rem;
+    width: 100%;
+    display: block;
+  }
+
+  /* Hamburger Active Animation */
+  .mobile-toggle.active .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-toggle.active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Hero Tweaks */
+  .hero-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .project-info-col {
+    padding: 1.5rem;
+  }
+
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .footer-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .lightbox-content {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .lightbox-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-nav-btn.prev { left: 0.5rem; }
+  .lightbox-nav-btn.next { right: 0.5rem; }
+
+  .lightbox-tray {
+    display: none; /* Hide tray on small screens to prioritize image size */
+  }
+}
